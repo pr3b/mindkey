@@ -8,7 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "Mindkey",
   tagline: "Technical Documentation",
-  url: "https://mindkey.github.io/",
+  url: "https://pr3b.github.io/",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -16,7 +16,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "pr3b", // Usually your GitHub org/user name.
+  organizationName: "ramandaprabu", // Usually your GitHub org/user name.
   projectName: "mindkey.github.io", // Usually your repo name.
   deploymentBranch: "gh-pages",
   trailingSlash: false,
