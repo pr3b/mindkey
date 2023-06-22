@@ -61,7 +61,7 @@ const config = {
           {
             id: "apiref",
             spec: "swagger.yaml",
-            route: "docs/recruiting",
+            route: "docs/recruitingAPI",
           },
         ],
         // Theme Options for modifying how redoc renders them
@@ -94,28 +94,35 @@ const config = {
             sidebarId: "tutorialSidebar",
             position: "left",
             label: "Get Started",
-            href: "mindkey-api",
+            to: "docs/mindkey-api",
           },
           {
             type: "docSidebar",
             sidebarId: "tutorialSidebar",
             position: "left",
             label: "Integrations",
-            href: "integration",
+            to: "docs/integration",
           },
           {
             type: "docSidebar",
             sidebarId: "tutorialSidebar",
             position: "left",
             label: "Recruiting",
-            href: "recruiting",
+            to: "docs/recruiting",
           },
           {
             type: "docSidebar",
             sidebarId: "tutorialSidebar",
             position: "left",
             label: "System",
-            href: "system-api",
+            to: "docs/system-api",
+          },
+          {
+            type: "docSidebar",
+            sidebarId: "tutorialSidebar",
+            position: "left",
+            label: "OpenAPI",
+            href: "docs/recruitingAPI",
           },
           {
             href: "https://github.com/facebook/docusaurus",
