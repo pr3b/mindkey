@@ -8,7 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "Mindkey",
   tagline: "Technical Documentation",
-  url: "https://mindkey.pr3b.io",
+  url: "https://pr3b.github.io",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
