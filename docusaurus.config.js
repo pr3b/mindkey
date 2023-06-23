@@ -11,7 +11,7 @@ const config = {
   title: "Mindkey",
   tagline: "Technical Documentation",
   // url: "https://pr3b.github.io", //github-pages
-  url: "https://docusaurus.netlify.io", //netlify
+  url: "https://docusaurus.netlify.app", //netlify
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
