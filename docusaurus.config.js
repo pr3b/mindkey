@@ -1,7 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const graphqlMarkdownConfig = require("./graphql-markdown.config");
+// const graphqlMarkdownConfig = require("./graphql-markdown.config");
 
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
@@ -77,20 +77,16 @@ const config = {
     ],
   ],
 
+  // plugins: [["@graphql-markdown/docusaurus", graphqlMarkdownConfig]],
+
   plugins: [
     [
-      "@graphql-markdown/docusaurus",
+      "docusaurus-graphql-plugin",
       {
-        schema: "./schema/swapi.graphql",
-        rootPath: "./docs", // docs will be generated under './docs/swapi' (rootPath/baseURL)
-        baseURL: "swapi",
-        homepage: "./docs/swapi.md",
-        loaders: {
-          GraphQLFileLoader: "@graphql-tools/graphql-file-loader", // local file schema
-        },
+        schema: "github.graphql",
+        routeBasePath: "/swapi.md",
       },
     ],
-    // ["@graphql-markdown/docusaurus", graphqlMarkdownConfig],
   ],
 
   // mermaid
@@ -148,48 +144,8 @@ const config = {
       },
       footer: {
         style: "dark",
-        links: [
-          {
-            title: "Docs",
-            items: [
-              {
-                label: "Get Started",
-                to: "/docs/mindkey-api",
-              },
-            ],
-          },
-          {
-            title: "Community",
-            items: [
-              {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
-              },
-              {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
-              },
-              {
-                label: "Twitter",
-                href: "https://twitter.com/docusaurus",
-              },
-            ],
-          },
-          {
-            title: "More",
-            items: [
-              {
-                label: "Blog",
-                to: "/blog",
-              },
-              {
-                label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+
+        copyright: `© ${new Date().getFullYear()} MindKey Software A/S All Rights Reserved`,
       },
       prism: {
         theme: lightCodeTheme,

@@ -7,7 +7,7 @@ sidebar_position: 3
 
 This documentation has been automatically generated using [GraphQL Jobs API](https://api.graphql.jobs) endpoint with following plugin configuration:
 
-```json title="graphql-markdown.config.js"
+```graphql title="graphql-markdown.config.js"
 {
   "schema": "./schema/swapi.graphql",
   "rootPath": "./docs",
