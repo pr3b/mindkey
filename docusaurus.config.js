@@ -1,6 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
+const graphqlMarkdownConfig = require("./graphql-markdown.config");
+
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
@@ -8,18 +10,20 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "Mindkey",
   tagline: "Technical Documentation",
-  url: "https://pr3b.github.io",
+  // url: "https://pr3b.github.io", //github-pages
+  url: "https://docusaurus.netlify.io", //netlify
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.png",
+  favicon:
+    "https://mindkey.com/wp-content/uploads/2022/07/cropped-mindkey-favicon-32x32.png",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "pr3b", // Usually your GitHub org/user name.
   projectName: "mindkey.github.io", // Usually your repo name.
   deploymentBranch: "gh-pages",
-  trailingSlash: false,
+  // trailingSlash: false,
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -73,20 +77,38 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      "@graphql-markdown/docusaurus",
+      {
+        schema: "./schema/swapi.graphql",
+        rootPath: "./docs", // docs will be generated under './docs/swapi' (rootPath/baseURL)
+        baseURL: "swapi",
+        homepage: "./docs/swapi.md",
+        loaders: {
+          GraphQLFileLoader: "@graphql-tools/graphql-file-loader", // local file schema
+        },
+      },
+    ],
+    // ["@graphql-markdown/docusaurus", graphqlMarkdownConfig],
+  ],
+
+  // mermaid
+  markdown: {
+    mermaid: true,
+  },
+  themes: ["@docusaurus/theme-mermaid"],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      mermaid: {
-        theme: "default", // Set the Mermaid.js theme
-        startOnLoad: false, // Delay rendering until activated
-      },
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
       navbar: {
-        title: "My Site",
+        // title: "My Site",
         logo: {
           alt: "My Site Logo",
-          src: "img/logo.svg",
+          src: "https://mindkey.com/wp-content/uploads/2017/07/mindkey-logo.png",
         },
         items: [
           {
@@ -117,18 +139,11 @@ const config = {
             label: "System",
             to: "docs/system-api",
           },
-          {
-            type: "docSidebar",
-            sidebarId: "tutorialSidebar",
-            position: "left",
-            label: "OpenAPI",
-            href: "docs/recruitingAPI",
-          },
-          {
-            href: "https://github.com/facebook/docusaurus",
-            label: "GitHub",
-            position: "right",
-          },
+          // {
+          //   href: "https://github.com/facebook/docusaurus",
+          //   label: "GitHub",
+          //   position: "right",
+          // },
         ],
       },
       footer: {
